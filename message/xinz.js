@@ -600,7 +600,7 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 },{
                     "buttonId": `${prefix}snk`,
                     "buttonText": {
-                        "displayText": "Syaray & Ketentuan"
+                        "displayText": "Syarat & Ketentuan"
                     },
                     "type": "RESPONSE"
                 }]
