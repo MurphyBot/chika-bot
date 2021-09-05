@@ -246,10 +246,19 @@ exports.menuWeeaboo = (prefix) => {
     `
 }
 
-exports.menuFun = (prefix) => {
+exports.menuExample1 = (prefix) => {
     return `
-*── 「 FUN FEATURE 」 ──*
+Ingin membuat foto dengan namamu\seperti du atas?\nKirim ${prefix}${command} namamu
+Cooldown: 5 detik
+Limit: Ya\nOnlyGroup: Tidak\nOnlyPremium: Tidak\nOnlyAdmin: Tidak\n\nDescription\nGenerate ${command} maker
+    `
+}
 
+exports.menuExample = (prefix) => {
+    return `
+Ingin membuat foto dengan namamu\seperti du atas?\nKirim ${prefix}${command} namamu
+Cooldown: 5 detik
+Limit: Ya\nOnlyGroup: Tidak\nOnlyPremium: Tidak\nOnlyAdmin: Tidak\n\nDescription\nGenerate ${command} maker
     `
 }
 
@@ -297,6 +306,25 @@ exports.menuNsfw = (prefix) => {
     `
 }
 
+exports.snk = (prefix) => {
+    return `
+Syarat & Ketentuan ApiccaBot
+
+• Nomor ApiccaBot resmi hanya ini 
+• ApiccaBot *hanya menyimpan nomor anda* di dalam database sebagai nomor user
+• ApiccaBot *tidak pernah meminta informasi pribadi* anda seperti alamat rumah, asal daerah dan lain lain.
+• Dilarang melakukan spam terhadap bot
+• Dilarang menelpon bot
+• Harap menggunakan fitur bot dengan bijak
+• ApiccaBot tidak menyimpan foto, video, atau media apapun yang anda kirimkan
+• ApiccaBot *tidak bertanggung jawab atas fitur apapun yang anda gunakan*
+• Apabila menemukan bug, error, ataupun request fitur harap hubungi devloper
+• ApiccaBot *berhak untuk memblokir* atau melakukan ban terhadap user dengan alasan maupun tanpa alasan
+
+© By Murphy
+`
+}    
+
 exports.menuOwner = (prefix) => {
     return `
 *── 「 OWNER MENU 」 ──*
@@ -337,21 +365,30 @@ exports.menuBot = (prefix) => {
 
 exports.menuPrice = (owner, pushname) => {
     return `
-*── 「 PRICE LIST 」 ──*
- 
-*Hai kak  ${pushname}*
-*Harga Sewa Bot*
-*15K/Group Selama 1 Bulan*
+*Free User ${pushname}*
+✅ Bot Online 24 jam
+❎ Unlimited Limit
+❎ Premium User
+❎ Add Bot to Group
+Price : Rp. 0
 
-*Pembayaran Bisa Melalui Metode Pembayaran di Bawah:*
-*OVO/Dana/Gopay = ${owner}*
-*QRis yang dilampirkan*
-*PAYPAL = rashidsiregar28@gmail.com*
+*Premium User*
+✅ Bot Online 24 jam
+✅ Unlimited Limit (2 Number)
+✅ Premium User (2 Number)
+❎ Add Bot to Group
+Price : Rp. 15.000
 
-*_note_*:
-*Jika kalian ingin menjadi owner bot,bisa chat owner untuk price nya :D*
-*wa.me/${owner} (Owner)*
+*Premium + User*
+✅ Bot Online 24 jam
+✅ Unlimited Limit (2 Number)
+✅ Premium User (2 Number)
+✅ Add Bot to Group (2 Group)
+Price : Rp. 20.000
 
+Pembayaran via Qris
+
+Buy? chat owner #owner
     `
 }
 
