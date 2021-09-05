@@ -620,10 +620,10 @@ Berikut menu ApiccaBot 🤖
 • ${prefix}tourl
 
 *Media*
+• ${prefix}ytdl
 • ${prefix}ytmp4
 • ${prefix}ytmp3
 • ${prefix}play
-• ${prefix}tiktok
 • ${prefix}tiktokwm
 • ${prefix}tiktoknowm
 • ${prefix}tiktokmusic
@@ -1176,25 +1176,6 @@ Berikut menu ApiccaBot 🤖
                         })
                  }
                     break
-            case prefix+'nhentaisearch':
-            case prefix+'nhsearch':
-            if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                if (args.length < 2) return reply(`Kirim perintah *${command} nama*`)
-                fetchJson ('https://api.lolhuman.xyz/api/nhentaisearch?apikey=${lolkey}&query=' + q)
-                .then((res) =>{
-                let list = []
-                for ( let x of res.data){
-                    const yy = { title english: `${x.title_english}`, title japanese: `${x.title_japanese}`,rowId: `${prefix}nhentaii ${x.id}`}
-                    list.push(yy)
-                }
-                xinz.sendListMsg(from, `List Nhentai`, `Hasil Pencarian Anime "${q}"`, `Pilih Nhentai Anda`,`Pilih Disini`, `Pilih Untuk MoreInfo`, list, msg)
-                })
-                 .catch((err) => {
-                            xinz.sendMess(ownerNumber[0], `${command} Error:` + err)
-                            reply(mess.error.api)
-                        })
-                 }
-                   break
             case prefix+'nhentaii':
             case prefix+'nh': 
             case prefix+'nhentai': {
