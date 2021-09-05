@@ -54,7 +54,7 @@ const { addBanned, unBanned, BannedExpired, cekBannedUser } = require("../lib/ba
 const { yta, ytv } = require("../lib/ytdl");
 const { getUser, getPost, searchUser } = require('../lib/instagram');
 const { fbdl } = require("../lib/fbdl");
-const { fakeStatus, fakeToko } = require("./fakeReply");
+const { fakeStatus, fakeToko fakeTroli } = require("./fakeReply");
 const game = require("../lib/game");
 const { addBadword, delBadword, isKasar, addCountKasar, isCountKasar, delCountKasar } = require("../lib/badword");
 
@@ -372,6 +372,29 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 xinz.groupRemove(from, [sender])
             }
         }
+        const ftoko = {
+key: {
+			fromMe: false,
+			participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "16505434800@s.whatsapp.net" } : {})
+		},
+		message: {
+			"productMessage": {
+				"product": {
+					"productImage":{
+						"mimetype": "image/jpeg",
+						"jpegThumbnail": fs.readFileSync(`./media/yo.jpg`) //Gambarnye
+					},
+					"title": "© By Murphy", //Kasih namalu 
+					"description": "SELF BOT", 
+					"currencyCode": "USD",
+					"priceAmount1000": "2000",
+					"retailerId": "Murphy",
+					"productImageCount": 1
+				},
+				    "businessOwnerJid": `0@s.whatsapp.net`
+		}
+	}
+}
         //Anti VO
         if (isGroup && isViewOnce && isAntiVO && xinz.mode !== 'self') {
             let typenya = msg.message.viewOnceMessage.message["videoMessage"] ? msg.message.viewOnceMessage.message.videoMessage : msg.message.viewOnceMessage.message.imageMessage
@@ -1584,7 +1607,7 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
             case prefix+'pinterest': case prefix+'pinsearch': case prefix+'pinterestsearch':{
                 if (!isPremium) return reply(mess.OnlyPrem)
                 if (!q) return reply(`Cara penggunaan : ${command} kucing`)
-                fetchJson(`https://api.justaqul.xyz/pinterest?q=${q}&apikey=${aqulzkey}`).then((data) => {
+                fetchJson(`https://api.justaqul.xyz/pinterest?q=${q}&apikey=orkTnGUVrFaYNL6p`).then((data) => {
                     xinz.sendFileFromUrl(from, data.image, `Hasil Pencarian Pinterest : ${q}`, msg)
                 })
                 }
@@ -3364,7 +3387,7 @@ Alert!!! : ${res.desc}`))
             case prefix+'cuaca': case prefix+'weather':
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 if (args.length < 2) return reply(`Penggunaan ${command} query`)
-                fetchJson(`https://api.lolhuman.xyz/api/cuaca/${q.trim()}?apikey=${lolkey}`)
+                fetchJson(`https://api.lolhuman.xyz/api/cuaca/Kuningan?apikey=${lolkey}`)
                 .then((res) =>{
                     let get_result = res.result
                     let ini_txt = `Tempat : ${get_result.tempat}\n`
@@ -3375,7 +3398,7 @@ Alert!!! : ${res.desc}`))
                     ini_txt += `Suhu : ${get_result.suhu}\n`
                     ini_txt += `Udara : ${get_result.udara}\n`
                     ini_txt += `Permukaan laut : ${get_result.permukaan_laut}\n`
-                    xinz.sendMessage(from, { degreesLatitude: get_result.latitude, degreesLongitude: get_result.longitude }, location, { quoted: msg }).then((res) => xinz.sendMessage(from, ini_txt, text, {quoted: res}))
+                    xinz.sendMessage(from, { degreesLatitude: get_result.latitude, degreesLongitude: get_result.longitude }, location, { quoted: ftoko }).then((res) => xinz.sendMessage(from, ini_txt, text, {quoted: res}))
                     limitAdd(sender, limit)
                 })
                  .catch((err) => {
