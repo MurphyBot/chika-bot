@@ -2077,16 +2077,7 @@ Mengubah gambar/video ke sticker dengan instan`)
             case prefix+'tovideo':
             case prefix+'tomedia':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-				if (!isQuotedSticker) return reply('Example: reply sticker dengan caption #toimg
-
-Cooldown: 5 detik
-Limit: Ya
-OnlyGroup: Tidak
-OnlyPremium: Tidak
-OnlyAdmin: Tidak
-
-Description:
-Mengubah sticker ke gambar/video dengan instan')
+				if (!isQuotedSticker) return reply('Example: reply sticker dengan caption #toimg')
                 let encmedia = isSticker ? JSON.parse(JSON.stringify(msg).replace('quotedM','m')).message.stickerMessage.contextInfo : JSON.parse(JSON.stringify(msg).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 				let media = await xinz.downloadAndSaveMediaMessage(encmedia)
 				if (quotedMsg.stickerMessage.isAnimated === true){
