@@ -645,7 +645,6 @@ Berikut menu ApiccaBot 🤖
 • ${prefix}loli
 • ${prefix}animesearch
 • ${prefix}mangasearch
-• ${prefix}hentaisearch
 
 *Group*
 • ${prefix}groupsetting
@@ -2485,7 +2484,7 @@ Mengubah gambar/video ke sticker dengan instan`)
                 case prefix+'battlefield4':
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 if (args.length < 2) xinz.sendImage(from, fs.readFileSync('./media/battlefield4.jpg'), ind.menuExample(prefix), msg, ['6282334170916@s.whatsapp.net', '0@s.whatsapp.net'])
-                if (!q.includes("|")) return reply(`xinz.sendImage(from, fs.readFileSync('./media/battlefield4.jpg'), ind.menuExample(prefix), msg, ['6282334170916@s.whatsapp.net', '0@s.whatsapp.net'])
+                if (!q.includes("|")) return reply(`Example ${prefix}${command} text|text`)
                 reply(mess.wait)
                 fetchJson(`https://api.lolhuman.xyz/api/photooxy2/battlefield4?apikey=AurelCans&text1=${q.split('|')[0]}&text2=${q.split('|')[1]}`)
                 .then((res) =>{
