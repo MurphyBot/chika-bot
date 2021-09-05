@@ -2158,16 +2158,7 @@ Mengubah gambar/video ke sticker dengan instan`)
                 break
                 case prefix+'stickermeme': case prefix+'memesticker': case prefix+'memestick': case prefix+'stickmeme': case prefix+'mememaker': case prefix+'textmaker':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                    if (!q) return reply('Example: reply/send gambar/sticker dengan caption ${prefix}${command} text atas|text bawah
-
-Cooldown: 15 detik
-Limit: Ya
-OnlyGroup: Tidak
-OnlyPremium: Tidak
-OnlyAdmin: Tidak
-
-Description:
-Generate meme')
+                    if (!q) return reply('Example: reply/send gambar/sticker dengan caption ${prefix}${command} text atas|text bawah')
                     var text1 = q.split('|')[0] ? q.split('|')[0] : (q.includes("|") ? '' : q)
 			     	var text2 = q.split('|')[1] ? q.split('|')[1] : ''
                     var atas = text1.replace('\n','%5Cn').replace('?', '~q').replace('%', '~p').replace('&', '~a').replace('#', '~h').replace('/', '~s')
