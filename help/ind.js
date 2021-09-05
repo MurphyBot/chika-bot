@@ -6,7 +6,7 @@ exports.ok = () => {
 }
 
 exports.cmdNotFound = (cmd, prefix) => {
-    return `Command *${cmd}* tidak terdaftar di *${prefix}menu*`
+    return `wih ajarin bang`
 }
 
 exports.hadis = (command) => {
