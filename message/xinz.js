@@ -643,7 +643,9 @@ Berikut menu ApiccaBot 🤖
 • ${prefix}waifu
 • ${prefix}neko
 • ${prefix}loli
-• ${prefix}darkjokes
+• ${prefix}animesearch
+• ${prefix}mangasearch
+• ${prefix}hentaisearch
 
 *Group*
 • ${prefix}groupsetting
@@ -1015,7 +1017,7 @@ Berikut menu ApiccaBot 🤖
                             reply(mess.error.api)
                         })
                   break
-            case prefix+'manga': case prefix+'searchmanga':{
+           case prefix+'mangasearch': case prefix+'manga': case prefix+'searchmanga':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 if (args.length < 2) return reply(`Kirim perintah *${command} nama*`)
                 fetchJson ('https://api.jikan.moe/v4/manga?q=' + q)
@@ -1033,7 +1035,7 @@ Berikut menu ApiccaBot 🤖
                         })
                  }
                    break
-            case prefix+'anime': case prefix+'searchanime':{
+            case prefix+'animesearch': case prefix+'anime': case prefix+'searchanime':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 if (args.length < 2) return reply(`Kirim perintah *${command} nama*`)
                 fetchJson ('https://api.jikan.moe/v4/anime?q=' + q)
@@ -1174,7 +1176,28 @@ Berikut menu ApiccaBot 🤖
                         })
                  }
                     break
-            case prefix+'nh': case prefix+'nhentai': {
+            case prefix+'nhentaisearch':
+            case prefix+'nhsearch':
+            if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+                if (args.length < 2) return reply(`Kirim perintah *${command} nama*`)
+                fetchJson ('https://api.lolhuman.xyz/api/nhentaisearch?apikey=${lolkey}&query=' + q)
+                .then((res) =>{
+                let list = []
+                for ( let x of res.data){
+                    const yy = { title english: `${x.title_english}`, title japanese: `${x.title_japanese}`,rowId: `${prefix}nhentaii ${x.id}`}
+                    list.push(yy)
+                }
+                xinz.sendListMsg(from, `List Nhentai`, `Hasil Pencarian Anime "${q}"`, `Pilih Nhentai Anda`,`Pilih Disini`, `Pilih Untuk MoreInfo`, list, msg)
+                })
+                 .catch((err) => {
+                            xinz.sendMess(ownerNumber[0], `${command} Error:` + err)
+                            reply(mess.error.api)
+                        })
+                 }
+                   break
+            case prefix+'nhentaii':
+            case prefix+'nh': 
+            case prefix+'nhentai': {
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 if (isNaN(args[1])) return reply(`Harus berupa angka`)
                 if (isGroup && !isNsfw) return reply(ind.notNsfw())
@@ -2481,7 +2504,7 @@ Mengubah gambar/video ke sticker dengan instan`)
                 case prefix+'battlefield4':
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 if (args.length < 2) xinz.sendImage(from, fs.readFileSync('./media/battlefield4.jpg'), ind.menuExample(prefix), msg, ['6282334170916@s.whatsapp.net', '0@s.whatsapp.net'])
-                if (!q.includes("|")) return reply(`Penggunaan ${command} text1|text2`)
+                if (!q.includes("|")) return reply(`xinz.sendImage(from, fs.readFileSync('./media/battlefield4.jpg'), ind.menuExample(prefix), msg, ['6282334170916@s.whatsapp.net', '0@s.whatsapp.net'])
                 reply(mess.wait)
                 fetchJson(`https://api.lolhuman.xyz/api/photooxy2/battlefield4?apikey=AurelCans&text1=${q.split('|')[0]}&text2=${q.split('|')[1]}`)
                 .then((res) =>{
