@@ -54,7 +54,7 @@ const { addBanned, unBanned, BannedExpired, cekBannedUser } = require("../lib/ba
 const { yta, ytv } = require("../lib/ytdl");
 const { getUser, getPost, searchUser } = require('../lib/instagram');
 const { fbdl } = require("../lib/fbdl");
-const { fakeStatus, fakeToko fakeTroli } = require("./fakeReply");
+const { fakeStatus, fakeToko } = require("./fakeReply");
 const game = require("../lib/game");
 const { addBadword, delBadword, isKasar, addCountKasar, isCountKasar, delCountKasar } = require("../lib/badword");
 
