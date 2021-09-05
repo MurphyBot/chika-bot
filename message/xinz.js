@@ -591,67 +591,87 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
             }
                 break
             case prefix+'menu': case prefix+'help':{
-                let qqppp = [{
-                    "buttonId": `${prefix}allmenu`,
+                 let qqppp = [{
+                    "buttonId": `${prefix}sewabot`,
                     "buttonText": {
-                        "displayText": "COMMAND"
+                        "displayText": "Price"
                     },
                     "type": "RESPONSE"
                 },{
-                    "buttonId": `${prefix}rules`,
+                    "buttonId": `${prefix}snk`,
                     "buttonText": {
-                        "displayText": "RULES"
+                        "displayText": "Syaray & Ketentuan"
                     },
                     "type": "RESPONSE"
                 }]
-                xinz.sendButtonsLoc(from, `Hai Kak @${sender.split('@')[0]}\n\nSaya ChikaBot, Bot WhatsApp yg membantu kamu untuk mempermudah sesuatu seperti Membuat Sticker dan Lainnya, Ada Butuh Info Dariku?`, `Note: Kalo kamu pakai wa lama atau mod, dan button ga keliatan, langsung aja ketik ${prefix}allmenu`, qqppp, fs.readFileSync(setting.pathImg), [sender])
+                xinz.sendButtonsLoc(from, `Hai @${sender.split('@')[0]} 👋
+
+*Follow me and subcribe :*
+• Github : Phy404
+• Youtube : FelixBot々️
+
+Berikut menu ApiccaBot 🤖
+
+*Convert*
+• ${prefix}sticker
+• ${prefix}toimg
+• ${prefix}tovideo
+• ${prefix}tomp3
+• ${prefix}tourl
+
+*Media*
+• ${prefix}ytmp4
+• ${prefix}ytmp3
+• ${prefix}play
+• ${prefix}tiktok
+• ${prefix}tiktokwm
+• ${prefix}tiktoknowm
+• ${prefix}tiktokmusic
+• ${prefix}igstalk
+• ${prefix}igdl
+
+*Maker*
+• ${prefix}stickermeme
+• ${prefix}mememaker
+• ${prefix}pencil
+• ${prefix}wasted
+• ${prefix}sky
+• ${prefix}battlefield4
+
+*Random & Search*
+• ${prefix}pinterest
+• ${prefix}waifu
+• ${prefix}neko
+• ${prefix}loli
+• ${prefix}darkjokes
+
+*Group*
+• ${prefix}groupsetting
+• ${prefix}linkgc
+• ${prefix}revoke
+• ${prefix}welcome
+• ${prefix}antilink
+• ${prefix}afk
+• ${prefix}tagall
+• ${prefix}hidetag
+
+*System*
+• ${prefix}speed
+• ${prefix}runtime
+• ${prefix}jadibot
+• ${prefix}stopjadibot
+
+*Only Owner*
+• ${prefix}self
+• ${prefix}public
+• ${prefix}reset
+• ${prefix}shutdown
+• ${prefix}premium add/del
+• ${prefix}sewa add/del
+
+*No Category*
+• ${prefix}price`, `© By Murphy`, qqppp, fs.readFileSync(setting.pathImg), [sender])
                 }
-                break
-             case prefix+'allmenu':{
-                    try {
-                        var pic = await xinz.getProfilePicture(sender)
-                    } catch {
-                        var pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
-                    }
-                    const jumlahCommand = require('util').inspect(hit.all)
-                    const jumlahHarian = require('util').inspect(hit.today)
-                    const jumlahUser = pendaftar.length
-                    const levelMenu = getLevelingLevel(sender)
-                    const xpMenu = getLevelingXp(sender)
-                    const reqXp  = 200 * (Math.pow(2, getLevelingLevel(sender)) - 1)
-			        const uangku = getBalance(sender, balance)
-                    const Limitnya = isPremium ? `UNLIMITED*\n*Expire : ${ms(_prem.getPremiumExpired(sender, premium) - Date.now()).days} day(s) ${ms(_prem.getPremiumExpired(sender, premium) - Date.now()).hours} hour(s) ${ms(_prem.getPremiumExpired(sender, premium) - Date.now()).minutes} minute(s)` : `${getLimit(sender, limitCount, limit)}`
-                    var b = xinz.mode
-                    let qqppp = [{
-                    "buttonId": `${prefix}sewabot`,
-                    "buttonText": {
-                        "displayText": "SEWABOT"
-                    },
-                    "type": "RESPONSE"
-                    }]
-                    xinz.sendButtonsLoc(from, ind.menu(prefix, ucap, pushname, jumlahUser, runtime(process.uptime()), ownerNumber[0].split("@")[0], jumlahHarian, jumlahCommand, sender, time, `*${b.toUpperCase()}*`, levelMenu, xpMenu, reqXp, uangku, role, Limitnya), `Pilih menu dibawah!`, qqppp, await getBuffer(pic), [sender, "0@s.whatsapp.net"]).then((res) =>{
-                    let list = []
-                    let listmenu = [`groupmenu`,`menupremi`,`textmenu`,`imagemaker`,`kerangmenu`,`praymenu`,`ownermenu`,`funmenu`,`mediamenu`,`weebsmenu`,`downloader`,`stickermenu`,`primbonmenu`,`levelingmenu`,`about`,`18`,`owner`,`sewabot`]
-                    let listmenuu = [`Menu Group`,`Premium Menu`,`TextMaker`,`Image Effect`,`Kerang Menu`,`PrayMenu`,`Owner Command`,`Fun Features`,`Misc and Media`,`Weebs Zone`,`Downloader`,`Sticker Editing`,`Primbon`,`Leveling Xp and Balance`,`About Bot`,`Nsfw Command`,`OwnerBot`,`Rent this Bot`]
-                    let listmenuuu = [`List Fitur Khusus Admin-Group`,`Hanya bisa dipakai oleh User-Premium`,`List Menu TextMaker`,`Edit Gambarmu menjadi efek yang keren`,`Random Jawaban bot kaka, masa ga tau, ga pernah nonton Spongebob ya?`, `Fitur keagamaan, harap Jangan diPermainkan, ayo kita tingkatkan toleransi 😍😍`,`Ini Cuman Untuk Ownerku`,`Fitur bot yg bisa dipake buat happy-an`,`Butuh Info atau Media, Klik disini`,`Zona Wibu-Only, BaKaa >/\/\<`,`Ingin download Sesuatu?`,`Bikin Sticker dan lainnya kaka`,`Ramalan Primbon buat kamu yg percaya ramalan xixi`,`Tingkatkan xp mu ya beb🥰🥰`,`Fitur ini menampilkan command" lengkap tentang bot`,`Only for 18+ madafaka`,`Kalo mau tau Ownerku, bisa klik ini kok`,`Mau sewaBot kak? info lebih lanjut, Klik ini`]
-                    let nombor = 1
-                    let startnum = 0
-                    let startnumm = 0
-                    for (let x of listmenu) {
-                        const yy = {title: 'Sub-Menu Ke-' + nombor++,
-                    rows: [
-                       {
-                        title: `${listmenuu[startnum++]}`,
-                        description: `${listmenuuu[startnumm++]}`,
-                        rowId: `${prefix}${x}`
-                      }
-                    ]
-                   }
-                        list.push(yy)
-                    }
-                    xinz.sendList(from, `Selamat ${ucap}`, `Hai kak @${sender.split('@')[0]}, pilih Menu ChikaBot disini`, `Jangan lupa Donasi ya Kak`,`Pilih Disini`, list, msg, [sender])
-                })
-            }
                 break
 //------------------< PRAY Command >-------------------
                 case prefix+'listsurah':
@@ -1333,7 +1353,16 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                break
             case prefix+'ytmp4':{
                 if (!isPremium) return reply(mess.OnlyPrem)
-                if (args.length === 1) return reply(`Kirim perintah *${prefix}ytmp4 [linkYt]*`)
+                if (args.length === 1) return reply(`Example: #ytmp4 link youtube
+
+Cooldown: 15 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Download Video/Audio Youtube`)
                 let isLinks2 = args[1].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
                 if (!isLinks2) return reply(mess.error.Iv)
                 try {
@@ -1378,7 +1407,16 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                 break
             case prefix+'ytmp3':{
                 if (!isPremium) return reply(mess.OnlyPrem)
-                if (args.length === 1) return reply(`Kirim perintah *${prefix}ytmp3 [linkYt]*`)
+                if (args.length === 1) return reply(`Example: #ytmp3 link youtube
+
+Cooldown: 15 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Download Video/Audio Youtube`)
                 let isLinks = args[1].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
                 if (!isLinks) return reply(mess.error.Iv)
                 try {
@@ -1914,7 +1952,16 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         fs.unlinkSync(ran)
                     })
                  } else {
-                   reply(`Kirim/reply video dengan caption ${command}`)
+                   reply(`Example: reply/send video/audio dengan caption #tomp3
+
+Cooldown: 15 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Mengubah video/audio ke mp3/vn dengan instan`)
                 }
                 break
             case prefix+'sfire':{
@@ -1990,7 +2037,16 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                     xinz.sendSticker(from, media, msg, true).then((res) => fs.unlinkSync(media))
                   	limitAdd(sender, limit)
                 } else {
-                    reply(`Kirim gambar/video dengan caption ${prefix}sticker atau tag gambar/video yang sudah dikirim\nNote : Durasi video maximal 10 detik`)
+                    reply(`Example: reply/send gambar/video dengan caption #sticker
+
+Cooldown: 5 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Mengubah gambar/video ke sticker dengan instan`)
                 }
             }
                 break
@@ -2021,7 +2077,16 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
             case prefix+'tovideo':
             case prefix+'tomedia':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-				if (!isQuotedSticker) return reply('Reply stiker nya')
+				if (!isQuotedSticker) return reply('Example: reply sticker dengan caption #toimg
+
+Cooldown: 5 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Mengubah sticker ke gambar/video dengan instan')
                 let encmedia = isSticker ? JSON.parse(JSON.stringify(msg).replace('quotedM','m')).message.stickerMessage.contextInfo : JSON.parse(JSON.stringify(msg).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 				let media = await xinz.downloadAndSaveMediaMessage(encmedia)
 				if (quotedMsg.stickerMessage.isAnimated === true){
@@ -2100,9 +2165,18 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                 })
                 }
                 break
-                case prefix+'stickermeme': case prefix+'memesticker': case prefix+'memestick': case prefix+'stickmeme': case prefix+'stcmeme': case prefix+'textmaker':{
+                case prefix+'stickermeme': case prefix+'memesticker': case prefix+'memestick': case prefix+'stickmeme': case prefix+'mememaker': case prefix+'textmaker':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                    if (!q) return reply('Textnya bang')
+                    if (!q) return reply('Example: reply/send gambar/sticker dengan caption ${prefix}${command} text atas|text bawah
+
+Cooldown: 15 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Generate meme')
                     var text1 = q.split('|')[0] ? q.split('|')[0] : (q.includes("|") ? '' : q)
 			     	var text2 = q.split('|')[1] ? q.split('|')[1] : ''
                     var atas = text1.replace('\n','%5Cn').replace('?', '~q').replace('%', '~p').replace('&', '~a').replace('#', '~h').replace('/', '~s')
@@ -2420,6 +2494,23 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                 if (args.length < 2) return reply(`Penggunaan ${command} text`)
                 reply(mess.wait)
                 xinz.sendMessage(from, { url:`https://api.lolhuman.xyz/api/hartatahta?apikey=${lolkey}&text=${q}`}, image, { quoted: msg }).catch(() => reply(mess.error.api))
+                limitAdd(sender, limit)
+                break
+                case prefix+'battlefield4':
+                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+                if (args.length < 2) xinz.sendImage(from, fs.readFileSync('./media/battlefield4.jpg'), ind.menuExample(prefix), msg, ['6282334170916@s.whatsapp.net', '0@s.whatsapp.net'])
+                if (!q.includes("|")) return reply(`Penggunaan ${command} text1|text2`)
+                reply(mess.wait)
+                fetchJson(`https://api.lolhuman.xyz/api/photooxy2/battlefield4?apikey=AurelCans&text1=${q.split('|')[0]}&text2=${q.split('|')[1]}`)
+                .then((res) =>{
+                xinz.sendMessage(from, { url: res.result }, image, { quoted: msg }).catch(() => reply(mess.error.api))
+                limitAdd(sender, limit)
+                })
+                break
+                case prefix+'sky':
+                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+                if (args.length < 2) xinz.sendImage(from, fs.readFileSync('./media/sky.jpg'), ind.menuExample(prefix), msg, ['6282334170916@s.whatsapp.net', '0@s.whatsapp.net'])
+                xinz.sendMessage(from, { url:`https://api.lolhuman.xyz/api/photooxy1/shadow?apikey=AurelCans&text=${q}`}, image, { quoted: msg })
                 limitAdd(sender, limit)
                 break
 //------------------< imagemaker >-------------------
@@ -3245,7 +3336,16 @@ Alert!!! : ${res.desc}`))
                     textImg(link)
 				    fs.unlinkSync(yoooo)
                  } else {
-                   reply(`Kirim/reply file (gambar, sticker, document, video, dll) dengan caption ${command}`)
+                   reply(`Example: reply/send media dengan caption #tourl
+
+Cooldown: 15 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Mengubah media ke bentuk url/link dengan instan`)
                 }
                }
                     break
@@ -3585,6 +3685,42 @@ Alert!!! : ${res.desc}`))
                             reply(mess.error.api)
                         })
                 break
+            case prefix+'neko': 
+                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+                getBuffer('https://api.lolhuman.xyz/api/random/neko?apikey=' + lolkey)
+                .then((kontlo)=>{
+                    xinz.sendImage(from, kontlo, '', msg)
+                    limitAdd(sender, limit)
+                })
+                 .catch((err) => {
+                            xinz.sendMess(ownerNumber[0], `${command} Error:` + err)
+                            reply(mess.error.api)
+                        })
+                break
+            case prefix+'loli': 
+                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+                getBuffer('https://api.lolhuman.xyz/api/random/loli?apikey=' + lolkey)
+                .then((kontlo)=>{
+                    xinz.sendImage(from, kontlo, '', msg)
+                    limitAdd(sender, limit)
+                })
+                 .catch((err) => {
+                            xinz.sendMess(ownerNumber[0], `${command} Error:` + err)
+                            reply(mess.error.api)
+                        })
+                break
+            case prefix+'waifu': 
+                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
+                getBuffer('https://api.lolhuman.xyz/api/random/waifu?apikey=' + lolkey)
+                .then((kontlo)=>{
+                    xinz.sendImage(from, kontlo, '', msg)
+                    limitAdd(sender, limit)
+                })
+                 .catch((err) => {
+                            xinz.sendMess(ownerNumber[0], `${command} Error:` + err)
+                            reply(mess.error.api)
+                        })
+                break
             case prefix+'darkjoke': case prefix+'darkjokes':
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 getBuffer('https://api.lolhuman.xyz/api/meme/darkjoke?apikey=' + lolkey)
@@ -3772,6 +3908,10 @@ Alert!!! : ${res.desc}`))
                     if (isGroup && !isNsfw) return reply(ind.notNsfw())
                     textImg(ind.menuNsfw(prefix))
                     break 
+                case prefix+'snk':
+                case prefix+'syarat & ketentuan':
+                textImg(ind.snk(prefix))
+                break
                 case prefix+'ownermenu':
                     if (!isOwner) return reply(ind.ownerOnly())
                     textImg(ind.menuOwner(prefix))
@@ -4011,7 +4151,16 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
             break
             case prefix+'play':
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                if (args.length === 1) return reply(`Kirim perintah *${command} query*`)
+                if (args.length === 1) return reply(`Example: #play query
+
+Cooldown: 15 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Download Video/Audio Youtube`)
                 try {
                     reply(mess.wait)
                     yts(q)
@@ -4180,7 +4329,16 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
             case prefix+'igdl':
             case prefix+'instagram':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                if (args.length < 2) return reply(`Kirim perintah *${prefix}ig* link ig`)
+                if (args.length < 2) return reply(`Example: #igdl link igpost
+
+Cooldown: 15 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Downloading media from igpost`)
                 if (!isUrl(args[1]) && !args[1].includes('instagram.com')) return reply(mess.error.Iv)
                 reply(mess.wait)
                 getPost(args[1].split('/')[4])
@@ -4260,7 +4418,16 @@ _Harap tunggu sebentar, media akan segera dikirim_`
 //------------------< Stalker >-------------------
             case prefix+'igstalk': case prefix+'stalkig':{
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                if (args.length < 2) return reply(`Kirim perintah *${prefix}igstalk* _username_`)
+                if (args.length < 2) return reply(`Example: #igstalk username
+
+Cooldown: 10 detik
+Limit: Ya
+OnlyGroup: Tidak
+OnlyPremium: Tidak
+OnlyAdmin: Tidak
+
+Description:
+Get info instagram account from username`)
                 reply(mess.wait)
                 getUser(args[1].replace('@', ''))
                 .then((res) => {
