@@ -248,9 +248,9 @@ exports.menuWeeaboo = (prefix) => {
 
 exports.menuExample1 = (prefix) => {
     return `
-Ingin membuat foto dengan namamu\seperti du atas?\nKirim ${prefix}${command} namamu
+Ingin membuat foto dengan namamu\seperti di atas?\nKirim ${prefix}${command} namamu
 Cooldown: 5 detik
-Limit: Ya\nOnlyGroup: Tidak\nOnlyPremium: Tidak\nOnlyAdmin: Tidak\n\nDescription\nGenerate ${command} maker
+Limit: Ya\nOnlyGroup: Tidak\nOnlyPremium: Tidak\nOnlyAdmin: Tidak\n\nDescription\nGenerate battlefield4 maker
     `
 }
 
@@ -258,7 +258,7 @@ exports.menuExample = (prefix) => {
     return `
 Ingin membuat foto dengan namamu\seperti du atas?\nKirim ${prefix}${command} namamu
 Cooldown: 5 detik
-Limit: Ya\nOnlyGroup: Tidak\nOnlyPremium: Tidak\nOnlyAdmin: Tidak\n\nDescription\nGenerate ${command} maker
+Limit: Ya\nOnlyGroup: Tidak\nOnlyPremium: Tidak\nOnlyAdmin: Tidak\n\nDescription\nGenerate sky maker
     `
 }
 
