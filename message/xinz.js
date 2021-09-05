@@ -372,6 +372,20 @@ module.exports = async(xinz, msg, smsg, blocked, _afk, welcome) => {
                 xinz.groupRemove(from, [sender])
             }
         }
+        const ftextt = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(from ? 
+	 { remoteJid: "6289643739077-1613049930@g.us" } : {}) 
+                },
+	 message: { 
+		"extendedTextMessage": {
+                 "text":"© By Murphy",
+                 "title": `Hmm`,
+                 'jpegThumbnail': fs.readFileSync('./media/yo.jpg')
+                        }
+	                  } 
+                     }
         const ftoko = {
 key: {
 			fromMe: false,
@@ -735,7 +749,7 @@ Berikut menu ApiccaBot 🤖
                     ini_txt += `Ayat : ${res.result.ayat}\n`
                     ini_txt += `Isi : ${res.result.isi}\n\n`
                     ini_txt += `Link : ${res.result.link}\n`
-                    xinz.sendFileFromUrl(from, res.result.img, ini_txt, msg)
+                    xinz.sendFileFromUrl(from, res.result.img, ini_txt, ftextt)
                     limitAdd(sender, limit)
                      })
                   .catch((err) => {
