@@ -3327,16 +3327,7 @@ Alert!!! : ${res.desc}`))
                     textImg(link)
 				    fs.unlinkSync(yoooo)
                  } else {
-                   reply(`Example: reply/send media dengan caption #tourl
-
-Cooldown: 15 detik
-Limit: Ya
-OnlyGroup: Tidak
-OnlyPremium: Tidak
-OnlyAdmin: Tidak
-
-Description:
-Mengubah media ke bentuk url/link dengan instan`)
+                   reply(`Example: reply/send media dengan caption #tourl`)
                 }
                }
                     break
