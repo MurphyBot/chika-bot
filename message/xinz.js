@@ -777,7 +777,7 @@ Berikut menu ApiccaBot 🤖
                 case prefix+'alquranaudio': case prefix+'quranaudio':
                     if (!q) return reply(`Cara Penggunaan : \n${command} Nomor_Surah\n\n ${command} 18/10 (Untuk Membuka Audio Per Ayat)`)
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                    xinz.sendFileFromUrl(from, `https://api.lolhuman.xyz/api/quran/audio/${args[1]}?apikey=${lolkey}`, '', msg).catch(() => reply(mess.error.api))
+                    xinz.sendFileFromUrl(from, `https://api.lolhuman.xyz/api/quran/audio/${args[1]}?apikey=${lolkey}`, '', ftextt).catch(() => reply(mess.error.api))
                     break
                 case prefix+'alquran': case prefix+'surah': case prefix+'surat': case prefix+'quran': case prefix+'alqur\'an': case prefix+'qur\'an':
                     if (!q) return reply(`Cara Penggunaan : \n${command} Nomor_surah\n\n ${command} 18/10 (Untuk Membuka 1 ayat saja pada nomor Surah)\n\n ${command} 18/1-10 (Untuk Membuka Beberapa ayat)`)
@@ -863,7 +863,7 @@ Berikut menu ApiccaBot 🤖
                     if (!q) return reply(`Contoh penggunaan ${command} muhammad`)
                     fetchJson('https://kisahnabi-api-zhirrr.vercel.app/api/searchnabi?q=' + q)
                     .then((res) =>{
-                    xinz.sendFileFromUrl(from, res.nabi.image, `Nama: ${res.nabi.nama}\nUmur: ${res.nabi.umur}\nLahir: ${res.nabi.lahir}\nTempat: ${res.nabi.tempat}\n\n\n${res.nabi.kisah}`, msg)
+                    xinz.sendFileFromUrl(from, res.nabi.image, `Nama: ${res.nabi.nama}\nUmur: ${res.nabi.umur}\nLahir: ${res.nabi.lahir}\nTempat: ${res.nabi.tempat}\n\n\n${res.nabi.kisah}`, ftextt)
                     limitAdd(sender, limit)
                     })
                    .catch((err) => {
@@ -892,7 +892,7 @@ Berikut menu ApiccaBot 🤖
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                     if (mentioned.length !== 0){
                     fetchJson ('https://www.nekos.life/api/v2/img/slap').then(({url}) => {
-                    xinz.sendSticker(from, url, msg, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
+                    xinz.sendSticker(from, url, ftextt, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
                     await sleep(2000);mentions(`@${mentioned[0].split('@')[0]} slapped @${sender.split('@')[0]}`, [sender, mentioned[0]], true)})
                     })
                 } else {
@@ -903,7 +903,7 @@ Berikut menu ApiccaBot 🤖
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                     if (mentioned.length !== 0){
                     fetchJson ('https://www.nekos.life/api/v2/img/pat').then(({url}) => {
-                    xinz.sendSticker(from, url, msg, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
+                    xinz.sendSticker(from, url, ftextt, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
                     await sleep(2000);mentions(`@${sender.split('@')[0]} pat @${mentioned[0].split('@')[0]}`, [sender, mentioned[0]], true)})
                     })
                 } else {
@@ -914,7 +914,7 @@ Berikut menu ApiccaBot 🤖
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                     if (mentioned.length !== 0){
                     fetchJson ('https://www.nekos.life/api/v2/img/baka').then(({url}) => {
-                    xinz.sendSticker(from, url, msg, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
+                    xinz.sendSticker(from, url, ftextt, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
                     await sleep(2000);mentions(`@${mentioned[0].split('@')[0]} Baka!!`, [sender, mentioned[0]], true)})
                     })
                 } else {
@@ -925,7 +925,7 @@ Berikut menu ApiccaBot 🤖
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                     if (mentioned.length !== 0){
                     fetchJson ('https://www.nekos.life/api/v2/img/hug').then(({url}) => {
-                    xinz.sendSticker(from, url, msg, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
+                    xinz.sendSticker(from, url, ftextt, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
                     await sleep(2000);mentions(`@${mentioned[0].split('@')[0]} hugged @${sender.split('@')[0]}`, [sender, mentioned[0]], true)})
                     })
                 } else {
@@ -936,7 +936,7 @@ Berikut menu ApiccaBot 🤖
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                     if (mentioned.length !== 0){
                     fetchJson ('https://www.nekos.life/api/v2/img/kiss').then(({url}) => {
-                    xinz.sendSticker(from, url, msg, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
+                    xinz.sendSticker(from, url, ftextt, true, [], {contextInfo: {"mentionedJid": [sender, mentioned[0]]}}).then(async (res) => {
                     await sleep(2000);mentions(`@${mentioned[0].split('@')[0]} kissed @${sender.split('@')[0]}`, [sender, mentioned[0]], true)})
                     })
                 } else {
@@ -946,7 +946,7 @@ Berikut menu ApiccaBot 🤖
                 case prefix+'waifu': case prefix+'wife':{
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                      fetchJson('https://waifu.pics/api/sfw/waifu').then((data) => {
-                     xinz.sendMessage(from, { url: data.url}, image, { quoted: msg })
+                     xinz.sendMessage(from, { url: data.url}, image, { quoted: ftextt })
                     limitAdd(sender, limit)
                     })
               .catch((err) => {
@@ -959,7 +959,7 @@ Berikut menu ApiccaBot 🤖
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                     neko.sfw.kemonomimi()
                      .then((data) =>{
-                    xinz.sendFileFromUrl(from, data.url, 'Ini', msg)
+                    xinz.sendFileFromUrl(from, data.url, 'Ini', ftextt)
                     limitAdd(sender, limit)
                     })
                   .catch((err) => {
@@ -969,7 +969,7 @@ Berikut menu ApiccaBot 🤖
                     break
                 case prefix+'elf':
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                    xinz.sendMessage(from, { url: 'https://api.lolhuman.xyz/api/random/elf?apikey=' + lolkey }, image, { quoted: msg})
+                    xinz.sendMessage(from, { url: 'https://api.lolhuman.xyz/api/random/elf?apikey=' + lolkey }, image, { quoted: ftextt})
                     .then((res) => {
                     limitAdd(sender, limit)
                     })
@@ -980,7 +980,7 @@ Berikut menu ApiccaBot 🤖
                     break
                 case prefix+'konachan':
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                    xinz.sendMessage(from, { url: 'https://api.lolhuman.xyz/api/konachan?apikey=' + lolkey + '&query=' + q }, image, { quoted: msg})
+                    xinz.sendMessage(from, { url: 'https://api.lolhuman.xyz/api/konachan?apikey=' + lolkey + '&query=' + q }, image, { quoted: ftextt})
                     .then((res) => {
                     limitAdd(sender, limit)
                     })
@@ -991,7 +991,7 @@ Berikut menu ApiccaBot 🤖
                     break
                 case prefix+'fanart':
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
-                    xinz.sendMessage(from, { url: 'https://api.lolhuman.xyz/api/random/art?apikey=' + lolkey }, image, { quoted: msg})
+                    xinz.sendMessage(from, { url: 'https://api.lolhuman.xyz/api/random/art?apikey=' + lolkey }, image, { quoted: ftextt})
                     .then((res) => {
                     limitAdd(sender, limit)
                     })
@@ -1017,7 +1017,7 @@ Berikut menu ApiccaBot 🤖
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                     neko.sfw.neko()
                      .then((data) =>{
-                    xinz.sendFileFromUrl(from, data.url, 'Ini', msg)
+                    xinz.sendFileFromUrl(from, data.url, 'Ini', ftextt)
                     limitAdd(sender, limit)
                     })
                    .catch((err) => {
@@ -1029,7 +1029,7 @@ Berikut menu ApiccaBot 🤖
                     if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                     neko.sfw.wallpaper()
                      .then((data) =>{
-                    xinz.sendFileFromUrl(from, data.url, 'Ini', msg)
+                    xinz.sendFileFromUrl(from, data.url, 'Ini', ftextt)
                     limitAdd(sender, limit)
                     })
                   .catch((err) => {
@@ -1045,7 +1045,7 @@ Berikut menu ApiccaBot 🤖
                     let ini_txt = `Name : ${res.result.title}\n`
                     ini_txt += `Intro : ${res.result.intro}\n`
                     ini_txt += `Icon : ${res.result.icon}\n`
-                    xinz.sendFileFromUrl(from, res.result.cover1, ini_txt, msg).then((pe) => xinz.sendFileFromUrl(from, res.result.cv[0].audio[0], '', pe))
+                    xinz.sendFileFromUrl(from, res.result.cover1, ini_txt, ftextt).then((pe) => xinz.sendFileFromUrl(from, res.result.cv[0].audio[0], '', pe))
                     limitAdd(sender, limit)
                     })    
                  .catch((err) => {
@@ -1098,7 +1098,7 @@ Berikut menu ApiccaBot 🤖
                     txt += `${x.name},`
                 }
                 txt += `\n\n${res.data.synopsis}\n\nInfo Lebih Lanjut Silahkan Klik ${res.data.url}`
-                xinz.sendFileFromUrl(from, res.data.images.jpg.image_url, txt, msg)
+                xinz.sendFileFromUrl(from, res.data.images.jpg.image_url, txt, ftextt)
                 })
                 }
                  break
@@ -1619,10 +1619,9 @@ _Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                 }
                 break
             case prefix+'pinterest': case prefix+'pinsearch': case prefix+'pinterestsearch':{
-                if (!isPremium) return reply(mess.OnlyPrem)
                 if (!q) return reply(`Cara penggunaan : ${command} kucing`)
-                fetchJson(`https://api.justaqul.xyz/pinterest?q=${q}&apikey=orkTnGUVrFaYNL6p`).then((data) => {
-                    xinz.sendFileFromUrl(from, data.image, `Hasil Pencarian Pinterest : ${q}`, msg)
+                fetchJson(`https://justnino.herokuapp.com/api/pinterest?query=${q}`).then((data) => {
+                    xinz.sendFileFromUrl(from, data.result, `Hasil Pencarian Pinterest : ${q}`, msg)
                 })
                 }
                 break 
