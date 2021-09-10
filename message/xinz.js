@@ -4512,8 +4512,10 @@ Get info instagram account from username`)
                 if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 if (args.length < 2) return reply(`Kirim perintah *${prefix}repostorystalk* _username repostory_`)
                 anu = await fetchJson(`https://justapicca.herokuapp.com/api/repository/stalk?username=${args[1]}&apikey=Apicca`)
-                let caption = `NameRepo : ${anu.result.nameRepo}\nFullNameRepo : ${anu.result.fullNameRepo}\nUrlRepo : ${anu.result.url_repo}\nDeskripsi : ${anu.result.description}\nUrlGit : ${anu.result.git_url}\nSsh : ${anu.result.ssh_url}\nHomepage : ${anu.result.homepage}\nStargazers : ${anu.result.stargazers}\nWatchers : ${anu.result.watchers}\nForks : ${anu.result.forks}\nDefaultBranch : ${anu.result.defaultBranch}\nisPrivate : ${anu.result.isPrivate}\nisFork : ${anu.result.isFork}\nVreatedate : ${anu.result.createdAt}\nUpdatedate : ${anu.result.updatedAt}\nPushedate : ${anu.result.pushedAt}\nUsername : ${anu.result.username}\nId User : ${anu.result.id_user}\nGithubUrl : ${anu.result.user_github_url}\nisSiteAdmin : ${anu.result.isSiteAdmin}\nType : ${anu.result.type}`
+                let cap = `NameRepo : ${anu.result.nameRepo}\nFullNameRepo : ${anu.result.fullNameRepo}\nUrlRepo : ${anu.result.url_repo}\nDeskripsi : ${anu.result.description}\nUrlGit : ${anu.result.git_url}\nSsh : ${anu.result.ssh_url}\nHomepage : ${anu.result.homepage}\nStargazers : ${anu.result.stargazers}\nWatchers : ${anu.result.watchers}\nForks : ${anu.result.forks}\nDefaultBranch : ${anu.result.defaultBranch}\nisPrivate : ${anu.result.isPrivate}\nisFork : ${anu.result.isFork}\nVreatedate : ${anu.result.createdAt}\nUpdatedate : ${anu.result.updatedAt}\nPushedate : ${anu.result.pushedAt}\nUsername : ${anu.result.username}\nId User : ${anu.result.id_user}\nGithubUrl : ${anu.result.user_github_url}\nisSiteAdmin : ${anu.result.isSiteAdmin}\nType : ${anu.result.type}`
+                gambarnya = await getBuffer(anu.result.avatar_url)
                 xinz.sendFileFromUrl(from, avatar_url, caption, msg)
+                xinz.sendImage(from, gambarnya, cap, msg, ['6282334170916@s.whatsapp.net', '0@s.whatsapp.net'])
                     limitAdd(sender, limit)
                     }
                 break
