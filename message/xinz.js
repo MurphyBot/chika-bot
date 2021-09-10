@@ -4508,19 +4508,13 @@ Get info instagram account from username`)
                 })
             }
                 break
-                case prefix+'repostorystalk':{
+                case prefix+'repostorystalk':
+                if (isLimit(sender, isPremium, isOwner, limitCount, limit)) return reply (`Limit kamu sudah habis silahkan kirim ${prefix}limit untuk mengecek limit`)
                 if (args.length < 2) return reply(`Kirim perintah *${prefix}repostorystalk* _username repostory_`)
-                stod = await fetchJson(`https://justapicca.herokuapp.com/api/repository/stalk?username=api-zeeoneofc&apikey=Apicca`)
+                stod = await fetchJson(`https://justapicca.herokuapp.com/api/repository/stalk?username=${args[1]}&apikey=Apicca`)
                 sted = `NameRepo : ${stod.result.nameRepo}\nFullNameRepo : ${stod.result.fullNameRepo}\nUrlRepo : ${stod.result.url_repo}\nDeskripsi : ${stod.result.description}\nUrlGit : ${stod.result.git_url}\nSsh : ${stod.result.ssh_url}\nHomepage : ${stod.result.homepage}\nStargazers : ${stod.result.stargazers}\nWatchers : ${stod.result.watchers}\nForks : ${stod.result.forks}\nDefaultBranch : ${stod.result.defaultBranch}\nisPrivate : ${stod.result.isPrivate}\nisFork : ${stod.result.isFork}\nVreatedate : ${stod.result.createdAt}\nUpdatedate : ${stod.result.updatedAt}\nPushedate : ${stod.result.pushedAt}\nUsername : ${stod.result.username}\nId User : ${stod.result.id_user}\nGithubUrl : ${stod.result.user_github_url}\nisSiteAdmin : ${stod.result.isSiteAdmin}\nType : ${stod.result.type}`
-                xinz.sendFileFromUrl(from, avatar_url, txt, msg)
+                xinz.sendFileFromUrl(from, avatar_url, sted, msg)
                     limitAdd(sender, limit)
-                })
-                .catch((err) => {
-                    xinz.sendMess(ownerNumber[0], 'GH Stalk Error : ' + err)
-                    console.log(color('[GH Stalk]', 'red'), err)
-					reply(mess.error.api)
-                })
-            }
                 break
 //------------------< Sewa >-------------------
             case prefix+'sewa':
