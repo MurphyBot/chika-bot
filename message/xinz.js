@@ -853,23 +853,6 @@ Cooldown: 5 detik
 UseLimit: false
 Category: group
 Alias: #welcome #left\n\n
-                case prefix+'searchmenu':
-                textImg(`*「 SEARCH MENU 」*
-
-• ${prefix}animesearch
-• ${prefix}igstalk
-• ${prefix}loli
-• ${prefix}mangasearch
-• ${prefix}neko
-• ${prefix}pinterest
-• ${prefix}play
-• ${prefix}waifu
-• ${prefix}wikipedia
-
-*Note*Note :*
-• Jika kebingungan, kamu dapat mengunakan command *${prefix}tr* untuk melihat petunjuk
-• Contoh : .tr`)
-break
                 case prefix+'ownermenu':
                  if (!isOwner) return reply(mess.OnlyOwner)
                 textImg(`*「 OWNER MENU 」*
