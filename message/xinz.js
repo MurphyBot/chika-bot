@@ -673,7 +673,7 @@ Berikut menu ApiccaBot 🤖
                 }
                 break
                 case prefix+'tr':
-                textImg(`*Anime Command*\n\n1. Command ini berfungsi untuk mencari anime dari website https://myanimelist.net/
+                textImg(` *Anime Command*\n\n1. Command ini berfungsi untuk mencari anime dari website https://myanimelist.net/
 
 Penggunaan : #animesearch anime
 Contoh : #animesearch naruto
@@ -855,7 +855,7 @@ Category: group
 Alias: #welcome #left\n\n
                 case prefix+'ownermenu':
                  if (!isOwner) return reply(mess.OnlyOwner)
-                textImg(`*「 OWNER MENU 」*
+                textImg(`「 OWNER MENU 」
 
 • ${prefix}self
 • ${prefix}public
@@ -870,7 +870,7 @@ Alias: #welcome #left\n\n
 • Contoh : .tr`)
 break
                 case prefix+'shopmenu':
-                textImg(`*「 SHOP MENU 」*
+                textImg(`「 SHOP MENU 」
 
 • ${prefix}price
 • ${prefix}buylimit
@@ -881,7 +881,7 @@ break
 • Contoh : .tr`)
 break
                 case prefix+'stickermenu':
-                textImg(`*「 STICKER MENU 」*
+                textImg(`「 STICKER MENU 」
 
 • ${prefix}stickermeme
 • ${prefix}sticker
@@ -895,7 +895,7 @@ break
 • Jika kebingungan, kamu dapat mengunakan command *${prefix}tr* untuk melihat petunjuk
 • Contoh : .tr`)
                 case prefix+'othermenu':
-                textImg(`*「 OTHER MENU 」*
+                textImg(`「 OTHER MENU 」*
 
 • ${prefix}jadibot
 • ${prefix}stopjadibot
@@ -916,7 +916,7 @@ break
 Maximal 5 bot`)
 break
                 case prefix+'makermenu':
-                textImg(`*「 MAKER MENU 」*
+                textImg(`「 MAKER MENU 」*
 
 • ${prefix}battlefield4
 • ${prefix}sky
@@ -930,7 +930,7 @@ break
 • Contoh : .tr`)
 break
                 case prefix+'infomenu'
-                textImg(`*「 INFO MENU 」*
+                textImg(`「 INFO MENU 」*
 
 • ${prefix}limit
 • ${prefix}owner
@@ -943,7 +943,7 @@ break
 • Contoh : .tr`)
 break
                 case prefix+'randommenu':
-                textImg(`*「 RANDOM MENU 」*
+                textImg(`「 RANDOM MENU 」*
 
 • ${prefix}loli
 • ${prefix}waifu
@@ -954,7 +954,7 @@ break
 • Jika kebingungan, kamu dapat mengunakan command *${prefix}tr* untuk melihat petunjuk
 • Contoh : .tr`)
                 case prefix+'groupmenu':
-                textImg(`*「 GROUP MENU 」*
+                textImg(`「 GROUP MENU 」*
 
 • ${prefix}afk
 • ${prefix}antilink
@@ -970,7 +970,7 @@ break
 • Contoh : .tr`)
 break
                 case prefix+'downloadmenu':
-                textImg(`*「 DOWNLOAD MENU 」*
+                textImg(`「 DOWNLOAD MENU 」*
 
 • .igdl
 • .play
@@ -986,7 +986,7 @@ break
 • Contoh : .tr`)
 break
                 case prefix+'convertmenu':
-                textImg(`*「 CONVERT MENU 」*
+                textImg(`「 CONVERT MENU 」*
 
 • .sticker
 • .toimg
@@ -1000,7 +1000,7 @@ break
 • Contoh : .tr`)
 break
                 case prefix+'animemenu':
-                textImg(`*「 ANIME MENU 」*
+                textImg(`「 ANIME MENU 」*
 
 • ${prefix}animesearch
 • ${prefix}loli
